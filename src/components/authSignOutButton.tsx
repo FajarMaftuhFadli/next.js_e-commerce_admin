@@ -5,7 +5,7 @@ export default function AuthSighOutButton() {
     <button
       onClick={() => signOut()}
       type="button"
-      className="my-auto block w-full rounded-md bg-slate-200 p-4 font-semibold text-slate-800 shadow-md transition-colors hover:bg-slate-100 hover:text-slate-700"
+      className="my-auto block w-full rounded-md border-2 border-slate-400 bg-white p-4 font-semibold transition-colors hover:bg-slate-50 hover:text-slate-800"
     >
       Sign out
     </button>
