@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full">
-      <body className="h-full pt-14">
+      <body className="h-full">
         <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
