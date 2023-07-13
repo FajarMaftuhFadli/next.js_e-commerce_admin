@@ -7,6 +7,7 @@ import IconBuildingStoreFront from './icons/building-storefront';
 import IconChevronLeft from './icons/chevron-left';
 
 import useStore from '@/stores/store';
+import IconQuestionMarkCircle from './icons/question-mark-circle';
 
 function AsideLink({
   href,
@@ -68,7 +69,7 @@ export default function Aside() {
             <span>Settings</span>
           </AsideLink>
           <AsideLink href="/help">
-            <IconCog6Tooth />
+            <IconQuestionMarkCircle />
             <span>Help</span>
           </AsideLink>
         </nav>
