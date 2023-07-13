@@ -3,12 +3,12 @@ import { useSession } from 'next-auth/react';
 import AuthSighOutButton from './authSignOutButton';
 import Image from 'next/image';
 
-export default function Header() {
+export default function Header({ pageTitle }: { pageTitle?: string }) {
   const { data: session } = useSession();
 
   return (
     <header className="flex h-20 w-full items-center justify-between border-b px-10">
-      <div className="text-3xl font-semibold">Dashboard</div>
+      {pageTitle && <div className="text-3xl font-semibold">{pageTitle}</div>}
       <div className="flex items-center space-x-4">
         <Image
           src={`${session?.user?.image}`}

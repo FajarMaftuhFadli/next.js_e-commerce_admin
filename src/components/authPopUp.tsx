@@ -2,7 +2,7 @@ import { signIn } from 'next-auth/react';
 
 export default function AuthPopUp() {
   return (
-    <div className="rounded-md border border-slate-400 p-10 text-slate-700 sm:p-20">
+    <div className="rounded-md border border-slate-400 p-10 sm:p-20">
       <div className="max-w-xs space-y-10">
         <h2 className="text-2xl font-bold">Welcome back!</h2>
         <span>Lorem, ipsum dolor sit amet consectetur adipisicing</span>

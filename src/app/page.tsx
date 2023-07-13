@@ -4,7 +4,7 @@ import AuthCheckWrapper from '@/components/authCheckWrapper';
 
 export default function Home() {
   return (
-    <AuthCheckWrapper>
+    <AuthCheckWrapper pageTitle="Dashboard">
       <main className="p-10">
         <span className="mb-4 block text-xl font-light">Last 24 hours</span>
         <div className="grid grid-cols-2 gap-5">
