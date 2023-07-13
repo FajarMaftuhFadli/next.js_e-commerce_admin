@@ -6,7 +6,7 @@ import AuthPopUp from '@/components/authPopUp';
 import Aside from '@/components/aside';
 import Header from '@/components/header';
 
-export default function SessionChecker({
+export default function AuthCheckWrapper({
   children,
 }: {
   children?: React.ReactNode;

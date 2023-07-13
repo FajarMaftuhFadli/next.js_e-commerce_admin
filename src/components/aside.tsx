@@ -66,7 +66,7 @@ export default function Aside() {
           </AsideLink>
         </nav>
       </div>
-      <div className="w-full p-4">
+      <div className="w-full px-4 py-6">
         <button
           type="button"
           title="collapse"
