@@ -4,6 +4,7 @@ import IconCog6Tooth from './icons/cog-6-tooth';
 import IconArchiveBox from './icons/archive-box';
 import IconQueueList from './icons/queue-list';
 import IconBuildingStoreFront from './icons/building-storefront';
+import IconChevronLeft from './icons/chevron-left';
 
 function AsideLink({
   href,
@@ -17,7 +18,7 @@ function AsideLink({
   return (
     <Link
       href={href}
-      className={`flex w-full space-x-4 rounded-md px-4 py-4 hover:text-blue-500 ${
+      className={`flex w-full space-x-4 rounded-md p-4 hover:text-blue-500 ${
         active ? 'bg-slate-200 text-blue-500' : ''
       }`}
     >
@@ -28,7 +29,7 @@ function AsideLink({
 
 export default function Aside() {
   return (
-    <aside className="flex h-full shrink-0 flex-col justify-between space-y-10 overflow-y-auto border-r bg-white px-10">
+    <aside className="flex h-full shrink-0 flex-col justify-between overflow-y-auto border-r bg-white px-10">
       <div className="">
         <Link
           href="/"
@@ -37,7 +38,7 @@ export default function Aside() {
           <IconBuildingStoreFront />
           <span>E-Commerce Admin</span>
         </Link>
-        <nav className="py-10">
+        <nav className="-mb-4 py-10">
           <span className="mb-4 block px-4 text-xl font-light">Menu</span>
           <AsideLink href="/" active>
             <IconHome />
@@ -53,7 +54,7 @@ export default function Aside() {
           </AsideLink>
         </nav>
         <hr />
-        <nav className="py-10">
+        <nav className="-mb-4 py-10">
           <span className="mb-4 block px-4 text-xl font-light">Other</span>
           <AsideLink href="/settings">
             <IconCog6Tooth />
@@ -65,12 +66,13 @@ export default function Aside() {
           </AsideLink>
         </nav>
       </div>
-      <div className="flex w-full space-x-4 px-6">
+      <div className="w-full p-4">
         <button
           type="button"
-          className="flex h-10 w-10 items-center justify-center rounded-full hover:bg-slate-200"
+          title="collapse"
+          className="-m-1 rounded-full p-1 hover:bg-slate-200"
         >
-          {'<|'}
+          <IconChevronLeft />
         </button>
       </div>
     </aside>
