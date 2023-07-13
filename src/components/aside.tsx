@@ -6,20 +6,27 @@ import IconQueueList from './icons/queue-list';
 import IconBuildingStoreFront from './icons/building-storefront';
 import IconChevronLeft from './icons/chevron-left';
 
+import useStore from '@/stores/store';
+
 function AsideLink({
   href,
   children,
-  active,
 }: {
   href: string;
   children: React.ReactNode;
-  active?: boolean;
 }) {
+  const pageTitle = useStore((state) => state.pageTitle);
+
+  // Returns true if the href parameter is the pageTitle parameter or the dashboard page.
+  const isActive =
+    href === `/${pageTitle}` ||
+    (href === '/' && `${pageTitle}` === 'dashboard');
+
   return (
     <Link
       href={href}
       className={`flex w-full space-x-4 rounded-md p-4 hover:text-blue-500 ${
-        active ? 'bg-slate-200 text-blue-500' : ''
+        isActive && 'bg-slate-200 text-blue-500'
       }`}
     >
       {children}
@@ -40,7 +47,7 @@ export default function Aside() {
         </Link>
         <nav className="-mb-4 py-10">
           <span className="mb-4 block px-4 text-xl font-light">Menu</span>
-          <AsideLink href="/" active>
+          <AsideLink href="/">
             <IconHome />
             <span>Dashboard</span>
           </AsideLink>

@@ -1,14 +1,20 @@
 'use client';
 import { useSession } from 'next-auth/react';
+import useStore from '@/stores/store';
+
 import AuthSighOutButton from './authSignOutButton';
 import Image from 'next/image';
 
-export default function Header({ pageTitle }: { pageTitle?: string }) {
+export default function Header() {
   const { data: session } = useSession();
+
+  const pageTitle = useStore((state) => state.pageTitle);
 
   return (
     <header className="flex h-20 w-full items-center justify-between border-b px-10">
-      {pageTitle && <div className="text-3xl font-semibold">{pageTitle}</div>}
+      {pageTitle && (
+        <div className="text-3xl font-semibold capitalize">{pageTitle}</div>
+      )}
       <div className="flex items-center space-x-4">
         <Image
           src={`${session?.user?.image}`}

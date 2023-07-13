@@ -1,10 +1,20 @@
+'use client';
+
 // import ShowSession from '@/components/showSession';
+import { useEffect } from 'react';
+import useStore from '@/stores/store';
 
 import AuthCheckWrapper from '@/components/authCheckWrapper';
 
 export default function Home() {
+  const setPageTitle = useStore((state) => state.setPageTitle);
+
+  useEffect(() => {
+    setPageTitle('dashboard');
+  }, [setPageTitle]);
+
   return (
-    <AuthCheckWrapper pageTitle="Dashboard">
+    <AuthCheckWrapper>
       <main className="p-10">
         <span className="mb-4 block text-xl font-light">Last 24 hours</span>
         <div className="grid grid-cols-2 gap-5">
