@@ -1,19 +1,25 @@
 'use client';
 
 import AuthPopUp from '@/components/authPopUp';
-import Nav from '@/components/nav';
+import Aside from '@/components/aside';
 // import ShowSession from '@/components/showSession';
 import { useSession } from 'next-auth/react';
+import Header from '@/components/header';
 
 export default function Home() {
   const { data: session } = useSession();
   if (session) {
     return (
-      <main className="flex">
-        <Nav />
-        <div className="p-4">Lorem ipsum dolor sit amet</div>
-        {/* <ShowSession /> */}
-      </main>
+      <>
+        <Header />
+        <main className="flex h-full border-t border-slate-400">
+          <Aside />
+          <div className="h-full overflow-y-auto p-4">
+            Hello Lorem ipsum dolor sit amet.
+          </div>
+          {/* <ShowSession /> */}
+        </main>
+      </>
     );
   }
   return (
