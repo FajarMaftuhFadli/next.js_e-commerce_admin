@@ -6,10 +6,10 @@ import AuthPopUp from '@/components/authPopUp';
 import Aside from '@/components/aside';
 import Header from '@/components/header';
 
-export default function AuthCheckWrapper({
+export default function MainLayout({
   children,
 }: {
-  children?: React.ReactNode;
+  children: React.ReactNode;
 }) {
   const { data: session } = useSession();
 
@@ -19,11 +19,12 @@ export default function AuthCheckWrapper({
         <Aside />
         <div className="h-full w-full overflow-y-auto bg-slate-100">
           <Header />
-          {children}
+          <main className="p-10">{children}</main>
         </div>
       </div>
     );
   }
+
   return (
     <div className="flex h-screen items-center justify-center p-4">
       <AuthPopUp />
