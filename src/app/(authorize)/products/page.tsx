@@ -1,9 +1,8 @@
 'use client';
 
+import Link from 'next/link';
 import { useEffect } from 'react';
 import useStore from '@/stores/store';
-
-import AuthCheckWrapper from '@/components/authCheckWrapper';
 
 export default function Products() {
   const setPageTitle = useStore((state) => state.setPageTitle);
@@ -13,8 +12,13 @@ export default function Products() {
   }, [setPageTitle]);
 
   return (
-    <AuthCheckWrapper>
-      <main className="p-10">Products</main>
-    </AuthCheckWrapper>
+    <>
+      <Link
+        className="rounded-md bg-blue-400 p-2 font-semibold text-white"
+        href="/products/addproduct"
+      >
+        Add Product
+      </Link>
+    </>
   );
 }
