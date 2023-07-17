@@ -13,7 +13,7 @@ export default function Header() {
   return (
     <header className="flex h-20 w-full items-center justify-between border-b px-10">
       {pageTitle && (
-        <div className="text-3xl font-semibold capitalize">{pageTitle}</div>
+        <h1 className="text-3xl font-semibold capitalize">{pageTitle}</h1>
       )}
       <div className="flex items-center space-x-4">
         <Image

@@ -15,7 +15,7 @@ export default function MainLayout({
 
   if (session) {
     return (
-      <div className="flex h-full border-t">
+      <div className="flex h-full">
         <Aside />
         <div className="h-full w-full overflow-y-auto bg-slate-100">
           <Header />

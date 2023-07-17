@@ -1,16 +1,6 @@
-'use client';
-
 import Link from 'next/link';
-import { useEffect } from 'react';
-import useStore from '@/stores/store';
 
 export default function Products() {
-  const setPageTitle = useStore((state) => state.setPageTitle);
-
-  useEffect(() => {
-    setPageTitle('products');
-  }, [setPageTitle]);
-
   return (
     <>
       <Link
