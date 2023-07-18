@@ -19,7 +19,7 @@ export default function MainLayout({
         <Aside />
         <div className="h-full w-full overflow-y-auto bg-slate-100">
           <Header />
-          <main className="p-10">{children}</main>
+          <main className="min-w-fit p-10">{children}</main>
         </div>
       </div>
     );
