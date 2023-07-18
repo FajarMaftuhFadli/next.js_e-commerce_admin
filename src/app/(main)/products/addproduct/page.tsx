@@ -1,15 +1,17 @@
 'use client';
-import { FormEvent, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function AddProduct() {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
+  const [goToProducts, setGoToProducts] = useState(false);
 
   const createProduct = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const res = await fetch('/api/products', {
+    await fetch('/api/products', {
       method: 'POST',
       body: JSON.stringify({
         name,
@@ -17,9 +19,17 @@ export default function AddProduct() {
         price,
       }),
     });
-    const data = await res.json();
-    console.log(data);
+
+    setGoToProducts(true);
   };
+
+  const router = useRouter();
+
+  useEffect(() => {
+    if (goToProducts) {
+      router.push('/products'); // Redirect to '/target-page'
+    }
+  }, [goToProducts, router]);
 
   return (
     <>
