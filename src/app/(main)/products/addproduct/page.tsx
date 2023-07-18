@@ -46,6 +46,7 @@ export default function AddProduct() {
           type="number"
           id="product-price"
           value={price}
+          min={0}
           onChange={(e) => setPrice(e.target.value)}
         />
         <button
