@@ -15,3 +15,9 @@ export async function POST(request: NextRequest) {
 
   return NextResponse.json(json_response);
 }
+
+export async function GET(request: NextRequest) {
+  await mongooseConnect();
+
+  return NextResponse.json(await Product.find());
+}
