@@ -27,7 +27,7 @@ export default function AddProduct() {
 
   useEffect(() => {
     if (goToProducts) {
-      router.push('/products'); // Redirect to '/target-page'
+      router.push('/products');
     }
   }, [goToProducts, router]);
 
