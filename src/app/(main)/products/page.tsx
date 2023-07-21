@@ -25,7 +25,6 @@ export default function Products() {
         },
       });
       setProducts(await response.json());
-      console.log(products);
     };
 
     fetchData();
