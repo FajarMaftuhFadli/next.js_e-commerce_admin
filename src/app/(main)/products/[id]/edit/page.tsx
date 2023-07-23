@@ -30,7 +30,7 @@ export default function Edit({ params }: { params: { id: string } }) {
     fetchData();
   }, [params.id]);
 
-  console.log(products);
+  products && console.log(products);
 
   return (
     <>

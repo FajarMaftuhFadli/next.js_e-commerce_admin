@@ -40,7 +40,7 @@ export default function Products() {
           Add Product
         </Link>
       </div>
-      <table className="w-full table-auto border border-slate-300 bg-white text-sm shadow-sm">
+      <table className="w-full table-auto border-collapse border border-slate-300 bg-white text-sm shadow-sm">
         <thead className="bg-slate-100">
           <tr>
             <th className="border border-slate-300 p-2 text-left font-semibold text-slate-900">
@@ -72,14 +72,14 @@ export default function Products() {
               <td className="border border-slate-300 p-2 text-slate-500">
                 <div className="flex space-x-2">
                   <Link
-                    href={`/products/edit/${product._id}`}
+                    href={`/products/${product._id}/edit`}
                     className="flex items-center rounded-md border border-slate-300 p-1 hover:border-blue-400 hover:text-blue-400"
                   >
                     <IconPencilSquare className="h-4 w-4" />
                     <span>EDIT</span>
                   </Link>
                   <Link
-                    href={`/products/delete/${product._id}`}
+                    href={`/products/${product._id}/delete`}
                     className="flex items-center rounded-md border border-slate-300 p-1 hover:border-red-400 hover:text-red-400"
                   >
                     <IconTrash className="h-4 w-4" />
