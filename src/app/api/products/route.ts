@@ -19,5 +19,10 @@ export async function POST(request: NextRequest) {
 export async function GET(request: NextRequest) {
   await mongooseConnect();
 
+  const { searchParams } = new URL(request.url);
+  const id = searchParams.get('id');
+
+  if (id) return NextResponse.json(await Product.findOne({ _id: id }));
+
   return NextResponse.json(await Product.find());
 }

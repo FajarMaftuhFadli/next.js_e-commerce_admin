@@ -35,24 +35,24 @@ export default function Products() {
       <div className="mb-4 w-full">
         <Link
           className="block w-fit rounded-md bg-blue-400 p-2 font-semibold text-white"
-          href="/products/addproduct"
+          href="/products/add"
         >
           Add Product
         </Link>
       </div>
-      <table className="w-full border border-slate-300 bg-white text-sm shadow-sm">
+      <table className="w-full table-auto border border-slate-300 bg-white text-sm shadow-sm">
         <thead className="bg-slate-100">
           <tr>
-            <th className="w-3/12 border border-slate-300 p-2 text-left font-semibold text-slate-900">
+            <th className="border border-slate-300 p-2 text-left font-semibold text-slate-900">
               Name
             </th>
-            <th className="w-5/12 border border-slate-300 p-2 text-left font-semibold text-slate-900">
+            <th className="border border-slate-300 p-2 text-left font-semibold text-slate-900">
               Description
             </th>
-            <th className="w-2/12 border border-slate-300 p-2 text-left font-semibold text-slate-900">
+            <th className="border border-slate-300 p-2 text-left font-semibold text-slate-900">
               Price
             </th>
-            <th className="w-2/12 border border-slate-300 p-2 text-left font-semibold text-slate-900">
+            <th className="border border-slate-300 p-2 text-left font-semibold text-slate-900">
               Actions
             </th>
           </tr>
