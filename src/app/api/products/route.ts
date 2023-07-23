@@ -26,3 +26,20 @@ export async function GET(request: NextRequest) {
 
   return NextResponse.json(await Product.find());
 }
+
+export async function PUT(request: NextRequest) {
+  await mongooseConnect();
+
+  const { _id, name, description, price } = await request.json();
+
+  const json_response = await Product.updateOne(
+    { _id },
+    {
+      name,
+      description,
+      price,
+    }
+  );
+
+  return NextResponse.json(json_response);
+}
