@@ -60,16 +60,16 @@ export default function Products() {
         <tbody>
           {products.map((product: Product) => (
             <tr key={product._id} className="hover:bg-slate-50">
-              <td className="border border-slate-300 p-2 text-slate-500">
+              <td className="border border-slate-300 p-2 align-text-top text-slate-500">
                 {product.name}
               </td>
-              <td className="border border-slate-300 p-2 text-slate-500">
+              <td className="border border-slate-300 p-2 align-text-top text-slate-500">
                 {product.description}
               </td>
-              <td className="border border-slate-300 p-2 text-slate-500">
+              <td className="border border-slate-300 p-2 align-text-top text-slate-500">
                 {product.price}
               </td>
-              <td className="border border-slate-300 p-2 text-slate-500">
+              <td className="border border-slate-300 p-2 align-text-top text-slate-500">
                 <div className="flex space-x-2">
                   <Link
                     href={`/products/${product._id}/edit`}

@@ -43,3 +43,14 @@ export async function PUT(request: NextRequest) {
 
   return NextResponse.json(json_response);
 }
+
+export async function DELETE(request: NextRequest) {
+  await mongooseConnect();
+
+  const { searchParams } = new URL(request.url);
+  const id = searchParams.get('id');
+
+  const json_response = await Product.deleteOne({ _id: id });
+
+  return NextResponse.json(json_response);
+}
